@@ -42,7 +42,7 @@
 .carosello .carosello__arrow {
 	position: absolute;
 	font-size: 40px;
-	color: black;
+	color: white;
 	top: 50%;
 	transform: translateY(-50%);
 	z-index: 20;

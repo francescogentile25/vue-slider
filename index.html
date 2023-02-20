@@ -11,27 +11,16 @@
     <title>Vue Carosel</title>
 </head>
 <body>  
-    <!-- <section class="py-5">
-        <div class="container">
-            struttura html del carosello
-            <div class="carosello">
-                <div id="arrow-left" class="carosello__arrow arrow-left">
-                    <i class="fa-solid fa-chevron-left"></i>
-                </div>
-                <div id="arrow-right" class="carosello__arrow arrow-right">
-                    <i class="fa-solid fa-chevron-right"></i>
-                </div>
-            </div>
-        </div>
-    </section> -->
         <div id="app">
 			<h1>{{ message }}</h1>
             <div class="container">
                 <div class="carosello">
                     <div  :class="(i === indiceSlideAttiva ? 'active' : '')" class="slide"  v-for='(card, i) in slides'>
                         <img v-bind:src="card.image" alt="">
-                        <h1>{{card.title}}</h1>
-                        <p>{{card.text}}</p>
+                        <div class="slide__overlay">
+                            <h3>{{card.title}}</h3>
+                            <p>{{card.text}}</p>
+                        </div>
                     </div>
                     <div id="arrow-left" class="carosello__arrow arrow-left" @click='goBack'>
                         <i class="fa-solid fa-chevron-left"></i>
