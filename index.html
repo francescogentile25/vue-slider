@@ -33,10 +33,10 @@
                         <h1>{{card.title}}</h1>
                         <p>{{card.text}}</p>
                     </div>
-                    <div id="arrow-left" class="carosello__arrow arrow-left">
+                    <div id="arrow-left" class="carosello__arrow arrow-left" @click='goBack'>
                         <i class="fa-solid fa-chevron-left"></i>
                     </div>
-                    <div id="arrow-right" class="carosello__arrow arrow-right  @click='goFoward' ">
+                    <div id="arrow-right" class="carosello__arrow arrow-right" @click='goForward'>
                         <i class="fa-solid fa-chevron-right"></i>
                     </div>
                 </div>

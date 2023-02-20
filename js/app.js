@@ -6,7 +6,7 @@ let indiceSlideAttiva = 0
 const option = {
     data() {
         return {
-
+            indiceSlideAttiva : 0,
             message: 'ciao',
             slides: [
                 {
@@ -35,6 +35,7 @@ const option = {
                     text: "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.",
                 },
             ],
+            
         }
     },
     methods: {
@@ -47,7 +48,6 @@ const option = {
                     indiceSlideAttiva = 0
                 }
                 slideElements[indiceSlideAttiva].classList.add('active')
-                console.log('ciao')
         },
         goBack(){
             slideElements[indiceSlideAttiva].classList.remove('active')

@@ -9,10 +9,10 @@
 	display: block;
 }
 
-/* .slide {
+.slide {
 	display: none;
 	position: relative;
-} */
+}
 
 .slide__overlay {
 	position: absolute;
