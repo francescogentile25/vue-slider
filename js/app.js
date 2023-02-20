@@ -1,11 +1,12 @@
 const { createApp } = Vue
 const slideElements = document.getElementsByClassName('slide')
-let indiceSlideAttiva = 0
+let indiceSlideAttiva=0
 
 
 const option = {
     data() {
         return {
+            active:true,
             indiceSlideAttiva : 0,
             message: 'ciao',
             slides: [
@@ -63,117 +64,3 @@ const option = {
 }
 const app = createApp(option)
 app.mount('#app')
-
-
-
-
-// let currentIndex = 0
-
-// // RECUPERIAMO DAL DOM IL CAROSELLO DOVE INSERIRE LE SLIDES
-// const carosello = document.querySelector('.carosello')
-// console.log(carosello)
-
-// slides.forEach(({ image, text, title }, index) => {
-// 	let className = 'slide'
-// 	if (index === currentIndex) {
-// 		className += ' active'
-// 	}
-// 	// console.log(index, slide)
-
-// 	const htmlSlide = `
-//     <div class="${className}">
-//       <img src="${image}" alt="" />
-//       <div class="slide__overlay">
-//         <h3>${title}</h3>
-//         <p>${text}</p>
-//       </div>
-//     </div>
-//   `
-
-// 	carosello.innerHTML += htmlSlide
-// })
-
-
-// // RECUPERATO LE SLIDE DEL CAROSELLO
-// let slideElements = document.querySelectorAll('.carosello .slide')
-// // slideElements = [...slideElements]
-// console.log(slideElements)
-
-// // RECUPERATO I DUE CONTROLLI
-// const arrowLeftElement = document.getElementById('arrow-left')
-// const arrowRightElement = document.getElementById('arrow-right')
-
-// // console.log(arrowLeftElement, arrowRightElement)
-
-// // slideElements[currentIndex].classList.add('active')
-
-// //AGGANCIAMO GLI EVENT LISTENER AI CONTROLLI
-// arrowLeftElement.addEventListener('click', prevSlide)
-
-// arrowRightElement.addEventListener('click', nextSlide)
-
-// function nextSlide() {
-// 	const lastIndex = slideElements.length - 1
-
-// 	// if (currentIndex < lastIndex) {
-// 	// nascondere la slide attiva
-// 	slideElements[currentIndex].classList.remove('active')
-
-// 	if (currentIndex < lastIndex) {
-// 		currentIndex += 1
-// 	} else {
-// 		currentIndex = 0
-// 	}
-
-// 	// mostrare la slide successiva
-// 	slideElements[currentIndex].classList.add('active')
-
-// 	// aggiornare il currentIndex
-
-// 	// }
-// }
-
-// function prevSlide() {
-// 	//nascondere la slide attiva
-// 	slideElements[currentIndex].classList.remove('active')
-
-// 	if (currentIndex > 0) {
-// 		currentIndex--
-// 	} else {
-// 		currentIndex = slideElements.length - 1 //last index
-// 	}
-
-// 	// mostrare la slide precedente
-// 	slideElements[currentIndex].classList.add('active')
-// 	// aggiornare il currentIndex
-// }
-
-// let direction = 'P'
-// let times = 0
-// let autoplay = setInterval(changeSlide, 3000)
-
-// // clearInterval(autoplay)
-// function changeSlide() {
-// 	switch (direction) {
-// 		case 'N':
-// 			nextSlide()
-// 			break
-// 		case 'P':
-// 			prevSlide()
-// 			break
-// 	}
-// }
-
-// carosello.addEventListener('mouseenter', () => {
-// 	console.log('mouse enter')
-
-// 	clearInterval(autoplay)
-// 	autoplay = undefined
-// })
-
-// carosello.addEventListener('mouseleave', () => {
-// 	console.log('mouse leave')
-// 	if (!autoplay) {
-// 		autoplay = setInterval(changeSlide, 3000)
-// 	}
-// })

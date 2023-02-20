@@ -28,7 +28,7 @@
 			<h1>{{ message }}</h1>
             <div class="container">
                 <div class="carosello">
-                    <div  :class='active' class="slide"  v-for='(card, index) in slides'>
+                    <div  :class="(i === indiceSlideAttiva ? 'active' : '')" class="slide"  v-for='(card, i) in slides'>
                         <img v-bind:src="card.image" alt="">
                         <h1>{{card.title}}</h1>
                         <p>{{card.text}}</p>
