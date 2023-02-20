@@ -1,10 +1,12 @@
 const { createApp } = Vue
-
+const slideElements = document.getElementsByClassName('slide')
+let indiceSlideAttiva = 0
 
 
 const option = {
     data() {
         return {
+
             message: 'ciao',
             slides: [
                 {
@@ -36,7 +38,27 @@ const option = {
         }
     },
     methods: {
-
+        goForward(){
+            const lastIndex =slideElements.length-1
+                slideElements[indiceSlideAttiva].classList.remove('active')
+                if (indiceSlideAttiva < lastIndex) {
+                    indiceSlideAttiva += 1
+                } else {
+                    indiceSlideAttiva = 0
+                }
+                slideElements[indiceSlideAttiva].classList.add('active')
+                console.log('ciao')
+        },
+        goBack(){
+            slideElements[indiceSlideAttiva].classList.remove('active')
+            if (indiceSlideAttiva > 0) {
+                indiceSlideAttiva--
+            } else {
+                indiceSlideAttiva = slideElements.length - 1 //last index
+            }
+            console.log(slideElements[indiceSlideAttiva])
+            slideElements[indiceSlideAttiva].classList.add('active')
+    },
     },
 }
 const app = createApp(option)
